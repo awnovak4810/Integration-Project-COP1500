@@ -1,12 +1,21 @@
+"""Anthony Novak's Integration Project for COP1500"""
+__author__ = "Anthony Novak"
+
 # Anthony Novak, COP1500, 1:30pm Class
 # My program is effectively a fun interaction with the AI known as BeepBoop
-# As well as other functions to show my progress in the class
+# As well as other functions to show my progress in the class.
 
 # Import math library for later use
 import math
 
-# This function checks to make sure the user enters a valid number when asked
+
 def getIntInput():
+    """
+    The purpose of this function is to ensure that the user enters an
+    integer when asked, in order to prevent errors from crashing the program.
+    user_input is used generically for any inputs requiring an integer,
+    and therefore makes this a value-returning function.
+    """
     control = True
     while control:
         try:
@@ -15,6 +24,7 @@ def getIntInput():
         except:
             print("Invalid input. Please enter a valid number.")
     return user_input
+
 
 # Introduction
 print("Hello! My name is BeepBoop and you have just been selected")
@@ -50,7 +60,7 @@ hawaiianShirtCost = 15
 shortsCost = 12
 
 # Prompts user for number of hawaiian shirts they want
-print("This very nice Hawaiian Shirt costs $15.00")
+print("This very nice Hawaiian Shirt costs $15")
 print("How many would you like to buy? ")
 numberShirts = getIntInput()
 
@@ -156,19 +166,19 @@ else:
     print("Thank you!\nHave a nice day!", end="\n\n")
 
 # Math operations beginning
-print("\nWow that shopping spree was fun!", end="\n\n")
-print("But I have a much more fun activity for us to do!", end="\n\n")
+print("\nWow that shopping spree was fun!")
+print("But I have a much more fun activity for us to do!")
 print("We are going to experiment around with some number calculations!",
       end="\n\n")
 
 # Exponent operator, while loop, OR
-print("Let's take two numbers and find the exponent value of them.\n")
+print("Let's take two numbers and find the exponent value of them.")
 
 print("Please enter a positive whole number between 1-10:")
 exponentValue1 = getIntInput()
 while exponentValue1 < 1 or exponentValue1 > 10:
     print("Your number is invalid.")
-    print("Please enter a positive number between 1-10:")
+    print("Please enter a positive whole number between 1-10:")
     exponentValue1 = getIntInput()
 
 print("Please enter a second positive whole number between 2-4:")
@@ -220,12 +230,24 @@ else:
 
 # Parameter passing and function definition
 def getQuadratic(a, b):
+    """
+    This function serves to calculate the square root using the math library
+    :param a: first value entered
+    :param b: second value entered
+    :return: the square root of the two numbers entered.
+    """
     square = a ** 2 + b ** 2
     squareRoot = math.sqrt(square)
     return squareRoot
 
 
 def main():
+    """
+    This function is static, in a way, by which the values are not entered
+    by the user, but just serve to display that I know how to use the
+    functions in Python for my project
+    :return: the square root of the numbers 420 and 69.
+    """
     print("Fun fact! The square root of the sum of squares of 420 and 69 is:",
           format(getQuadratic(420, 69), "0.2f"))
 
